@@ -34,8 +34,8 @@
 // for (let i = max; i >= min; i -= 1) {
 //     //console.log (i % 2);
 //     if (i % 2===0) {
-//         continue 
-//     }  
+//         continue
+//     }
 //     //console.log (i);
 // total += i;
 // }
@@ -68,7 +68,7 @@
 //          message = "Неверный пароль!";
 //     }
 // } else if (userInput === null) {
-//    message = "Отменено";  
+//    message = "Отменено";
 // } else {
 //      message = "Я вас не знаю";
 // }
@@ -114,23 +114,47 @@
 //     console.log (typeof userInput)
 //     total += Number(userInput);
 //     userInput = prompt("Введите число");
-    
+
 // }
 // console.log(total);
 
-let userInput = prompt ("Введите число");
-let total = 0;
-let check = false;
-do {
-    if (userInput) {
-        check = true;
-        total += Number(userInput);
-        userInput = prompt("Введите число");
-    } else {
-        check = false;
-        alert(`Общая сумма чисел равна${total}`)
-    }
+// let userInput = prompt ("Введите число");
+// let total = 0;
+// let check = false;
+// do {
+//     if (userInput) {
+//         check = true;
+//         total += Number(userInput);
+//         userInput = prompt("Введите число");
+//     } else {
+//         check = false;
+//         alert(`Общая сумма чисел равна${total}`)
+//     }
 
-} while (check);
+// } while (check);
 
+// console.log(total);
+
+//7. Напишите цикл, который предлагает ввести
+//число больше 100 через prompt.
+//Если если посетитель ввёл другое число - попросить
+//ввести ещё раз и так далее.
+//Цикл должет спрашивать число, пока посетитель не
+//введёт число больше 100, либо не нажмет кнопку
+//Отмена в prompt
+
+let userInput = prompt("Введите число больше 100");
+console.log(Number(userInput) < 100);
+let isMore = Number(userInput) < 100;
+while (isMore) {
+  userInput = prompt("Введите число больше 100");
+  isMore = Number(userInput) < 100;
+}
+alert(`Вы ввели${userInput}`);
+
+//     console.log (typeof userInput)
+//     total += Number(userInput);
+//     userInput = prompt("Введите число");
+
+// }
 // console.log(total);
