@@ -74,26 +74,63 @@
 // }
 // console.log(message);
 
-let message = "";
-const userInput = prompt("Введите логин");
-switch (userInput) {
-    case "Админ":
-         const userPassword = prompt('Введите пароль');
-        switch (userPassword) {
-            case "Я главный":
-                message = "Здравствуйте!";
-                break;
-            case null:
-                message = "Отменено";
-                break;
-            default:
-                message = "Неверный пароль!";
-        }
-        break;
-    case null:
-        message = "Отменено";
-        break;
-    default:
-        message = "Я вас не знаю";
-}
-console.log(message);
+// let message = "";
+// const userInput = prompt("Введите логин");
+// switch (userInput) {
+//     case "Админ":
+//          const userPassword = prompt('Введите пароль');
+//         switch (userPassword) {
+//             case "Я главный":
+//                 message = "Здравствуйте!";
+//                 break;
+//             case null:
+//                 message = "Отменено";
+//                 break;
+//             default:
+//                 message = "Неверный пароль!";
+//         }
+//         break;
+//     case null:
+//         message = "Отменено";
+//         break;
+//     default:
+//         message = "Я вас не знаю";
+// }
+// console.log(message);
+
+//5. При загрузке страницы пользователю предлагается
+//в prompt ввести число. Ввод добавляется к значению
+//переменной total.
+//Операция ввода числа продолжается до тех пор,
+//пока пользователь не нажмет кнопку Cancel в prompt.
+//После того как пользователь прекратил ввод нажав на
+//кнопку Cancel, показать alert со строкой "Общая сумма введенных чисел равна [число]."
+//Делать проверку,что пользователь ввел именно число,
+//а не произвольный набор символов, не нужно.
+// console.log("hello")
+// let userInput = prompt ("Введите число");
+// let total = 0;
+// while (userInput) {
+//     console.log (typeof userInput)
+//     total += Number(userInput);
+//     userInput = prompt("Введите число");
+    
+// }
+// console.log(total);
+
+let userInput = prompt ("Введите число");
+let total = 0;
+let check = false;
+do {
+    if (userInput) {
+        check = true;
+        total += Number(userInput);
+        userInput = prompt("Введите число");
+    } else {
+        check = false;
+        alert(`Общая сумма чисел равна${total}`)
+    }
+
+} while (check);
+
+// console.log(total);
