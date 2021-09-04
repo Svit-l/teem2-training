@@ -18,10 +18,25 @@
 //строку в формате часов и минут
 // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
 // 70 === 01:10
-const userInput = prompt("Введите количество минут")
-const hours = Math.floor(userInput / 60)
-const min = userInput % 60
-const modHours = String(hours).padStart(2, 0)
-const modMin = String(min).padStart(2,0)
-console.log(`${modHours}:${modMin}`)
+// const userInput = prompt("Введите количество минут")
+// const hours = Math.floor(userInput / 60)
+// const min = userInput % 60
+// const modHours = String(hours).padStart(2, 0)
+// const modMin = String(min).padStart(2,0)
+// console.log(`${modHours}:${modMin}`)
 
+//3. Напишите цыкл, который выводит в консоль
+//числа от max до min по убыванию
+
+const max = 50;
+const min = 23;
+let total = 0;
+for (let i = max; i >= min; i -= 1) {
+    //console.log (i % 2);
+    if (i % 2===0) {
+        continue 
+    }  
+    //console.log (i);
+total += i;
+}
+console.log(total);
