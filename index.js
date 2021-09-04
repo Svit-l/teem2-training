@@ -28,15 +28,72 @@
 //3. Напишите цыкл, который выводит в консоль
 //числа от max до min по убыванию
 
-const max = 50;
-const min = 23;
-let total = 0;
-for (let i = max; i >= min; i -= 1) {
-    //console.log (i % 2);
-    if (i % 2===0) {
-        continue 
-    }  
-    //console.log (i);
-total += i;
+// const max = 50;
+// const min = 23;
+// let total = 0;
+// for (let i = max; i >= min; i -= 1) {
+//     //console.log (i % 2);
+//     if (i % 2===0) {
+//         continue 
+//     }  
+//     //console.log (i);
+// total += i;
+// }
+// console.log(total);
+
+//4. Напишите код, который будет спрашивать
+//логин с помощью prompt и логировать результат
+//в консоль браузера
+
+//Если посетитель вводит "Админ",
+//то prompt запрашивает пароль.
+//Если ничего не ввели или нажата клавиша Esc
+//вывести стороку "Отменено"
+//В противном случае вывксти строку "Я вас не знаю"
+
+//Пароль проверять так:
+//Если введён пароль "Я главный",
+//то вывести строку "Здравствуйте!"
+//иначе выводить строку "Неверный пароль!"
+
+// let message = "";
+// const userInput = prompt("Введите логин");
+// if (userInput === "Админ") {
+//     const userPassword = prompt('Введите пароль');
+//     if (userPassword === "Я главный") {
+//         message = "Здравствуйте!";
+//     } else if (userPassword === null){
+//  message = "Отменено";
+//     } else {
+//          message = "Неверный пароль!";
+//     }
+// } else if (userInput === null) {
+//    message = "Отменено";  
+// } else {
+//      message = "Я вас не знаю";
+// }
+// console.log(message);
+
+let message = "";
+const userInput = prompt("Введите логин");
+switch (userInput) {
+    case "Админ":
+         const userPassword = prompt('Введите пароль');
+        switch (userPassword) {
+            case "Я главный":
+                message = "Здравствуйте!";
+                break;
+            case null:
+                message = "Отменено";
+                break;
+            default:
+                message = "Неверный пароль!";
+        }
+        break;
+    case null:
+        message = "Отменено";
+        break;
+    default:
+        message = "Я вас не знаю";
 }
-console.log(total);
+console.log(message);
