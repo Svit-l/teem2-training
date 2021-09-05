@@ -143,14 +143,14 @@
 //введёт число больше 100, либо не нажмет кнопку
 //Отмена в prompt
 
-let userInput = prompt("Введите число больше 100");
-console.log(Number(userInput) < 100);
-let isMore = Number(userInput) < 100;
-while (isMore) {
-  userInput = prompt("Введите число больше 100");
-  isMore = Number(userInput) < 100;
-}
-alert(`Вы ввели${userInput}`);
+// let userInput = prompt("Введите число больше 100");
+// console.log(Number(userInput) < 100);
+// let isMore = Number(userInput) < 100;
+// while (isMore) {
+//   userInput = prompt("Введите число больше 100");
+//   isMore = Number(userInput) < 100;
+// }
+// alert(`Вы ввели${userInput}`);
 
 //     console.log (typeof userInput)
 //     total += Number(userInput);
@@ -158,3 +158,10 @@ alert(`Вы ввели${userInput}`);
 
 // }
 // console.log(total);
+
+let input = prompt("Введите число больше 100");
+
+while (input < 100) {
+  input = prompt("Введите число больше 100");
+}
+console.log(input);
