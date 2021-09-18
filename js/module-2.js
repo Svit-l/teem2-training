@@ -41,11 +41,49 @@
 // }
 // console.log(min(9, 6));
 
-function min(a, b) {
-  if (typeof a !== "number" || typeof b !== "number") {
-    console.log("Ввели не число");
+// function min(a, b) {
+//   if (typeof a !== "number" || typeof b !== "number") {
+//     console.log("Ввели не число");
+//     return;
+//   }
+//   return Math.min(a, b);
+// }
+// console.log(min(9, "строка"));
+
+//Напишите функцию logItems(array) которая принимает
+//массив и использует цикл for, который для каждого
+//элемента массива будет выводить сообщение в формате
+//<номер элемента> - <значение элемента>
+//Нумерация элементов должна начинаться с 1.
+//['Джаз', 'Блюз', 'Рок-н-ролл', 'Регги', 'Рэп']
+
+// function logItems(array) {
+//   for (let i = 0; i < array.length; i++) {
+//     console.log(`${i+1}-${array[i]}`);
+//   }
+// }
+// logItems(['Джаз', 'Блюз', 'Рок-н-ролл', 'Регги', 'Рэп']);
+
+
+//Напиши функцию findSmallerNumber(numbers)
+//которая ищет самое маленькое число в массиве
+//Добавь проверку что функция получает массив
+const numbers = [2, 5, 35, 56, 12, 24, 7, 80, 3, 1];
+
+function findSmallerNumber(numbers) {
+
+  if (!Array.isArray(numbers)) {
+    console.log("Мы получили не масив");
     return;
+  };
+
+  let minEl = numbers[0];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] < minEl) {
+      minEl = numbers[i];
+    }
   }
-  return Math.min(a, b);
+  return minEl;
 }
-console.log(min(9, "строка"));
+
+console.log(findSmallerNumber(numbers));
