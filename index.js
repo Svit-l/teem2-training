@@ -159,9 +159,9 @@
 // }
 // console.log(total);
 
-let input = prompt("Введите число больше 100");
+// let input = prompt("Введите число больше 100");
 
-while (input < 100) {
-  input = prompt("Введите число больше 100");
-}
-console.log(input);
+// while (input < 100) {
+//   input = prompt("Введите число больше 100");
+// }
+// console.log(input);
