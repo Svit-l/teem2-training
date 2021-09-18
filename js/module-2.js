@@ -64,26 +64,67 @@
 // }
 // logItems(['Джаз', 'Блюз', 'Рок-н-ролл', 'Регги', 'Рэп']);
 
-
 //Напиши функцию findSmallerNumber(numbers)
 //которая ищет самое маленькое число в массиве
 //Добавь проверку что функция получает массив
-const numbers = [2, 5, 35, 56, 12, 24, 7, 80, 3, 1];
+// const numbers = [2, 5, 35, 56, 12, 24, 7, 80, 3, 1];
 
-function findSmallerNumber(numbers) {
+// function findSmallerNumber(numbers) {
 
-  if (!Array.isArray(numbers)) {
-    console.log("Мы получили не масив");
-    return;
-  };
+//   if (!Array.isArray(numbers)) {
+//     console.log("Мы получили не масив");
+//     return;
+//   };
 
-  let minEl = numbers[0];
-  for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] < minEl) {
-      minEl = numbers[i];
-    }
-  }
-  return minEl;
-}
+//   let minEl = numbers[0];
+//   for (let i = 0; i < numbers.length; i++) {
+//     if (numbers[i] < minEl) {
+//       minEl = numbers[i];
+//     }
+//   }
+//   return minEl;
+// }
 
-console.log(findSmallerNumber(numbers));
+// console.log(findSmallerNumber(numbers));
+
+// Task 3-1
+// const styles = [
+//   { name: "Джаз", engl: "jazz", number: 1 },
+//   { name: "Блюз", engl: "blues", number: 2 },
+//   { name: "Рок-н-ролл", engl: "rock 'n' roll", number: 3 },
+//   { name: "Регги", engl: "reggae", number: 4 },
+//   { name: "Рэп", engl: "rap", number: 5 },
+// ];
+
+// function logStyles(styles) {
+//   for (const { name, engl, number } of styles) {
+//     console.log(
+//       `Название ${name}, Название на английском ${engl}, номер ${number}`
+//     );
+//   }
+// }
+
+// logStyles(styles);
+
+// Task 4
+//Напиши функцию caculculateAverage()
+//которая принимает произвольное количество
+//аргументов и возвращает их среднее значение.
+//Добавить проверку, что аргументы это числа.
+
+// function caculculateAverage(...numbers) {
+//   let total = 0;
+//   let count = 0;
+//   for (const number of numbers) {
+//     if (typeof number !== "number") {
+//       console.log("Это не число");
+//       continue;
+//     }
+//     total += number;
+//     count += 1;
+//   }
+
+//   return total / count;
+// }
+
+// console.log(caculculateAverage(2, 5, 35, 56, 12, 24, 7, 80, 3, 1, "kll"));
