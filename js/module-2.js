@@ -128,3 +128,53 @@
 // }
 
 // console.log(caculculateAverage(2, 5, 35, 56, 12, 24, 7, 80, 3, 1, "kll"));
+
+//Напиши функцию findLongestWord(string)
+//которая принимает произвольную строку
+//состоящую только из слов разделенных
+//пробелом (параметр string)
+//и возвращает самое длинное слово в этой строке
+
+// function findLongestWord(string) {
+//     const words = string.split(" ")
+//     let longestWord = words[0]
+//     for (const word of words) {
+//         if (word.length > longestWord.length) {
+//             longestWord = word
+//         }
+//     }
+//     return longestWord
+// }
+
+// console.log(findLongestWord('которая принимает произвольную строку')); 
+
+//Напишите функцию findTheColor()
+//которая принимает название цвета
+//определяет его наличие в массиве
+//если цвет есть, усталавливет его как фон документа
+//если цвета нет выводит console.error('Такой цвет не найден');
+//и устанавливает цвет документа красный
+// document.body.style.background = 'red';
+// const colors = ['blue', 'yellow', 'olive', 'fuchsia', 'lime', 'aqua', 'maroon']
+
+// function findTheColor (color) {
+    // if (colors.includes(color)) {
+    //     document.body.style.background = color;
+    //     return 
+    // }
+    // document.body.style.background = 'red'
+    // return
+
+//     document.body.style.background = colors.includes(color) ? color : 'red';
+    
+//     if (!colors.includes(color)) {
+//         console.error('Такой цвет не найден');
+//     }
+// }
+
+// findTheColor('fff')
+
+
+//Напишите скрипт который заменяет регистр каждого символа
+//в стороке на противоположный
+//Например 'JavaScript' должен вернуть 'jAVAsCRIPT'
