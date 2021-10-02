@@ -230,13 +230,20 @@ const vehicles = [
 // }
 
 // const getAvailableCarNames = (cars, value) => cars.filter(car => car.amount > value);
-const getAvailableCarNames = (cars, value) => {
-  return cars.reduce((acc, car) => {
-    if (car.amount > value) {
-      // acc.push(car.model);
-      return [...acc, car.model]
-    }
-    return acc;
-  }, []);
+// const getAvailableCarNames = (cars, value) => {
+//   return cars.reduce((acc, car) => {
+//     if (car.amount > value) {
+//       // acc.push(car.model);
+//       return [...acc, car.model]
+//     }
+//     return acc;
+//   }, []);
+// }
+// console.table(getAvailableCarNames(vehicles, 12));
+
+//Получить машины на распродаже и сортировать по убыванию цены
+const getSortedCarsOnSale = (cars) => {
+  return cars.filter(({onSale}) => !onSale).sort((prevCar, nextCar) => nextCar.price - prevCar.price)
 }
-console.table(getAvailableCarNames(vehicles, 12));
+
+console.table(getSortedCarsOnSale(vehicles));
