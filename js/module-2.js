@@ -178,6 +178,8 @@
 //в стороке на противоположный
 //Например 'JavaScript' должен вернуть 'jAVAsCRIPT'
 
+//  02-10-2021
+//++++++++++++++++++++++Task1
 // Напиши класс Client котрорый создает объект
 // со свойствами login email
 // Объяви приватные свойства #login #email,
@@ -208,8 +210,7 @@
 // console.log(mangoClient.__proto__ === Client.prototype);
 // console.log(Client.__proto__ === Function.prototype);
 
-
-// task 2
+// ++++++++++++++++++++++++++++++task 2
 
 // const vehicles = [
 //   { make: 'Honda', model: 'CR-V', type: 'suv', amount: 14, price: 24045, onSale: true },
@@ -223,6 +224,7 @@
 //   { make: 'Ford', model: 'Fusion', type: 'sedan', amount: 13, price: 22120, onSale: true },
 //   { make: 'Ford', model: 'Explorer', type: 'suv', amount: 6, price: 31660, onSale: false },
 // ];
+
 //1.Реализовать фильтр по свойству amount и получить
 //только название модели
 // const getAvailableCarNames = (cars, value) => {
@@ -241,23 +243,37 @@
 // }
 // console.table(getAvailableCarNames(vehicles, 12));
 
+// ++++++++++++++++++++++++++++++task 3
+
+//Получить машины на распродаже и сортировать по убыванию цены
+// const getSortedCarsOnSale = (cars) => {
+//   return cars.filter(({onSale}) => !onSale).sort((prevCar, nextCar) => nextCar.price - prevCar.price)
+// }
+
+// console.table(getSortedCarsOnSale(vehicles));
+
+// ++++++++++++++++++++++++++++++task 4
+
 //Необходимо написать функцию (isEqualSymbols), принимающую
 //в аргументах две строки и возвращающую true, если эти строки
 //состоят из идентичных букв и false в противном случае.
 
 const isEqualSymbols = (str1, str2) => {
-  const stringToArray1 = str1.split('').filter((item, index, array) => array.indexOf(item) === index);
-  const stringToArray2 = [...str2].filter((item, index, array) => array.indexOf(item) === index);
+  const stringToArray1 = str1
+    .split("")
+    .filter((item, index, array) => array.indexOf(item) === index);
+  const stringToArray2 = [...str2].filter(
+    (item, index, array) => array.indexOf(item) === index
+  );
   if (stringToArray1.length !== stringToArray2.length) return false;
-  
-  for (let i = 0; i < stringToArray1.length; i++)  {
-    if (!stringToArray1.includes(stringToArray2[i])) return false;  
+
+  for (let i = 0; i < stringToArray1.length; i++) {
+    if (!stringToArray1.includes(stringToArray2[i])) return false;
   }
   return true;
-}
-console.log(isEqualSymbols('кот', 'ток'));
-console.log(isEqualSymbols('кот', 'тик'));
+};
+console.log(isEqualSymbols("кот", "ток"));
+console.log(isEqualSymbols("кот", "тик"));
 
 // isEqualSymbols('кот', 'ток'); // выведет true
 // isEqualSymbols('кот', 'тик'); // выведет false
-
