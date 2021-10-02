@@ -178,6 +178,8 @@
 //в стороке на противоположный
 //Например 'JavaScript' должен вернуть 'jAVAsCRIPT'
 
+//  02-10-2021
+//++++++++++++++++++++++Task1
 // Напиши класс Client котрорый создает объект
 // со свойствами login email
 // Объяви приватные свойства #login #email,
@@ -208,21 +210,21 @@
 // console.log(mangoClient.__proto__ === Client.prototype);
 // console.log(Client.__proto__ === Function.prototype);
 
+// ++++++++++++++++++++++++++++++task 2
 
-// task 2
+// const vehicles = [
+//   { make: 'Honda', model: 'CR-V', type: 'suv', amount: 14, price: 24045, onSale: true },
+//   { make: 'Honda', model: 'Accord', type: 'sedan', amount: 2, price: 22455, onSale: true },
+//   { make: 'Mazda', model: 'Mazda 6', type: 'sedan', amount: 8, price: 24195, onSale: false },
+//   { make: 'Mazda', model: 'CX-9', type: 'suv', amount: 7, price: 31520, onSale: true },
+//   { make: 'Toyota', model: '4Runner', type: 'suv', amount: 19, price: 34210, onSale: false },
+//   { make: 'Toyota', model: 'Sequoia', type: 'suv', amount: 16, price: 45560, onSale: false },
+//   { make: 'Toyota', model: 'Tacoma', type: 'truck', amount: 4, price: 24320, onSale: true },
+//   { make: 'Ford', model: 'F-150', type: 'truck', amount: 11, price: 27110, onSale: true },
+//   { make: 'Ford', model: 'Fusion', type: 'sedan', amount: 13, price: 22120, onSale: true },
+//   { make: 'Ford', model: 'Explorer', type: 'suv', amount: 6, price: 31660, onSale: false },
+// ];
 
-const vehicles = [
-  { make: 'Honda', model: 'CR-V', type: 'suv', amount: 14, price: 24045, onSale: true },
-  { make: 'Honda', model: 'Accord', type: 'sedan', amount: 2, price: 22455, onSale: true },
-  { make: 'Mazda', model: 'Mazda 6', type: 'sedan', amount: 8, price: 24195, onSale: false },
-  { make: 'Mazda', model: 'CX-9', type: 'suv', amount: 7, price: 31520, onSale: true },
-  { make: 'Toyota', model: '4Runner', type: 'suv', amount: 19, price: 34210, onSale: false },
-  { make: 'Toyota', model: 'Sequoia', type: 'suv', amount: 16, price: 45560, onSale: false },
-  { make: 'Toyota', model: 'Tacoma', type: 'truck', amount: 4, price: 24320, onSale: true },
-  { make: 'Ford', model: 'F-150', type: 'truck', amount: 11, price: 27110, onSale: true },
-  { make: 'Ford', model: 'Fusion', type: 'sedan', amount: 13, price: 22120, onSale: true },
-  { make: 'Ford', model: 'Explorer', type: 'suv', amount: 6, price: 31660, onSale: false },
-];
 //1.Реализовать фильтр по свойству amount и получить
 //только название модели
 // const getAvailableCarNames = (cars, value) => {
@@ -241,9 +243,37 @@ const vehicles = [
 // }
 // console.table(getAvailableCarNames(vehicles, 12));
 
-//Получить машины на распродаже и сортировать по убыванию цены
-const getSortedCarsOnSale = (cars) => {
-  return cars.filter(({onSale}) => !onSale).sort((prevCar, nextCar) => nextCar.price - prevCar.price)
-}
+// ++++++++++++++++++++++++++++++task 3
 
-console.table(getSortedCarsOnSale(vehicles));
+//Получить машины на распродаже и сортировать по убыванию цены
+// const getSortedCarsOnSale = (cars) => {
+//   return cars.filter(({onSale}) => !onSale).sort((prevCar, nextCar) => nextCar.price - prevCar.price)
+// }
+
+// console.table(getSortedCarsOnSale(vehicles));
+
+// ++++++++++++++++++++++++++++++task 4
+
+//Необходимо написать функцию (isEqualSymbols), принимающую
+//в аргументах две строки и возвращающую true, если эти строки
+//состоят из идентичных букв и false в противном случае.
+
+const isEqualSymbols = (str1, str2) => {
+  const stringToArray1 = str1
+    .split("")
+    .filter((item, index, array) => array.indexOf(item) === index);
+  const stringToArray2 = [...str2].filter(
+    (item, index, array) => array.indexOf(item) === index
+  );
+  if (stringToArray1.length !== stringToArray2.length) return false;
+
+  for (let i = 0; i < stringToArray1.length; i++) {
+    if (!stringToArray1.includes(stringToArray2[i])) return false;
+  }
+  return true;
+};
+console.log(isEqualSymbols("кот", "ток"));
+console.log(isEqualSymbols("кот", "тик"));
+
+// isEqualSymbols('кот', 'ток'); // выведет true
+// isEqualSymbols('кот', 'тик'); // выведет false
