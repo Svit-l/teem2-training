@@ -146,7 +146,7 @@
 //     return longestWord
 // }
 
-// console.log(findLongestWord('которая принимает произвольную строку')); 
+// console.log(findLongestWord('которая принимает произвольную строку'));
 
 //Напишите функцию findTheColor()
 //которая принимает название цвета
@@ -158,15 +158,15 @@
 // const colors = ['blue', 'yellow', 'olive', 'fuchsia', 'lime', 'aqua', 'maroon']
 
 // function findTheColor (color) {
-    // if (colors.includes(color)) {
-    //     document.body.style.background = color;
-    //     return 
-    // }
-    // document.body.style.background = 'red'
-    // return
+// if (colors.includes(color)) {
+//     document.body.style.background = color;
+//     return
+// }
+// document.body.style.background = 'red'
+// return
 
 //     document.body.style.background = colors.includes(color) ? color : 'red';
-    
+
 //     if (!colors.includes(color)) {
 //         console.error('Такой цвет не найден');
 //     }
@@ -174,7 +174,36 @@
 
 // findTheColor('fff')
 
-
 //Напишите скрипт который заменяет регистр каждого символа
 //в стороке на противоположный
 //Например 'JavaScript' должен вернуть 'jAVAsCRIPT'
+
+// Напиши класс Client котрорый создает объект
+// со свойствами login email
+// Объяви приватные свойства #login #email,
+// доступ к которым сделай через геттер и сеттер login email
+
+class Client {
+  #login;
+  #email;
+
+  constructor(login, email) {
+    this.#login = login;
+    this.#email = email;
+  }
+
+  get clientData() {
+    return {
+      login: this.#login,
+      email: this.#email,
+    };
+  }
+  set changeEmail(newEmail) {
+    this.#email = newEmail;
+  }
+}
+const mangoClient = new Client("Mango", "mango@gmail.com");
+mangoClient.changeEmail = "sobaka@gmail.com";
+console.log(mangoClient.clientData);
+console.log(mangoClient.__proto__ === Client.prototype);
+console.log(Client.__proto__ === Function.prototype);
