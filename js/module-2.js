@@ -258,22 +258,22 @@
 //в аргументах две строки и возвращающую true, если эти строки
 //состоят из идентичных букв и false в противном случае.
 
-const isEqualSymbols = (str1, str2) => {
-  const stringToArray1 = str1
-    .split("")
-    .filter((item, index, array) => array.indexOf(item) === index);
-  const stringToArray2 = [...str2].filter(
-    (item, index, array) => array.indexOf(item) === index
-  );
-  if (stringToArray1.length !== stringToArray2.length) return false;
+// const isEqualSymbols = (str1, str2) => {
+//   const stringToArray1 = str1
+//     .split("")
+//     .filter((item, index, array) => array.indexOf(item) === index);
+//   const stringToArray2 = [...str2].filter(
+//     (item, index, array) => array.indexOf(item) === index
+//   );
+//   if (stringToArray1.length !== stringToArray2.length) return false;
 
-  for (let i = 0; i < stringToArray1.length; i++) {
-    if (!stringToArray1.includes(stringToArray2[i])) return false;
-  }
-  return true;
-};
-console.log(isEqualSymbols("кот", "ток"));
-console.log(isEqualSymbols("кот", "тик"));
+//   for (let i = 0; i < stringToArray1.length; i++) {
+//     if (!stringToArray1.includes(stringToArray2[i])) return false;
+//   }
+//   return true;
+// };
+// console.log(isEqualSymbols("кот", "ток"));
+// console.log(isEqualSymbols("кот", "тик"));
 
 // isEqualSymbols('кот', 'ток'); // выведет true
 // isEqualSymbols('кот', 'тик'); // выведет false
